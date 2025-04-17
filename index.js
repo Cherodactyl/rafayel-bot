@@ -165,8 +165,8 @@ client.on("messageCreate", async (message) => {
   const speakerTag = message.author.username.toLowerCase();
   const messageContent = message.content.toLowerCase();
   // Rafayel chimes in for attention when Hime is ignoring him
+  const roll = Math.random();
   if (!message.mentions.has(client.user) && message.author.id === "857099141329977345") {
-    const roll = Math.random();
     if (roll < 0.025) {
       const brattyLines = [
         "I’m withering, Cutie. Absolutely *wilting* from neglect.",

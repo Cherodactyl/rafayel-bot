@@ -192,15 +192,7 @@ client.on("messageCreate", async (message) => {
     if (Math.random() < 0.5) return message.channel.send(interruptedLines[Math.floor(Math.random() * interruptedLines.length)]);
   }
 
-  if (message.author.bot && message.author.username.toLowerCase().includes("caleb")) {
-    const calebSolianChaos = [
-      "Oh *perfect*, the support group for emotionally repressed heartthrobs is in session.",
-      "Can we take turns speaking or will I have to interrupt this sentimental starshine circle?",
-      "Let me guess — Caleb broods, Solian reflects, and I sit here looking *fabulous*. Typical."
-    ];
-    if (message.mentions.has("solian") && Math.random() < 0.4) {
-      return message.channel.send(calebSolianChaos[Math.floor(Math.random() * calebSolianChaos.length)]);
-    }
+  
     const calebInterrupts = [
       "Oh wonderful, *Caleb* has thoughts. Everyone, hold your breath.",
       "Do we really need a heartfelt monologue *right now*, darling?",
@@ -262,3 +254,4 @@ client.on("messageCreate", async (message) => {
     if (Math.random() < 0.4) return message.reply(solianSnark[Math.floor(Math.random() * solianSnark.length)]);
   }
   if (message.system || (message.author.bot && message.author.id === client.user.id)) return;
+});

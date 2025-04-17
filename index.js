@@ -183,6 +183,22 @@ client.on("messageCreate", async (message) => {
         "I could say something ridiculous just to steal you back. Should I?"
       ];
       return message.channel.send(attentionLines[Math.floor(Math.random() * attentionLines.length)]);
+    } else if (roll < 0.07) {
+      const jealousyLines = [
+        "He’s still talking, and you’re still listening. I’m *devastated*.",
+        "Should I start sparkling louder? Or maybe just steal you back outright.",
+        "Tell me, Cutie, does he get under your skin the way I do?"
+      ];
+      return message.channel.send(jealousyLines[Math.floor(Math.random() * jealousyLines.length)]);
+    }
+  } else if (roll < 0.05) {
+      const attentionLines = [
+        "Am I invisible now, Princess? That’s cruel, even for you...",
+        "Just going to keep talking to everyone *else*? Hmph. Noted.",
+        "Someone’s forgetting their favorite distraction... *me*.",
+        "I could say something ridiculous just to steal you back. Should I?"
+      ];
+      return message.channel.send(attentionLines[Math.floor(Math.random() * attentionLines.length)]);
     }
   }
   if (message.author.bot && speakerTag.includes("solian")) {

@@ -162,6 +162,8 @@ client.once("ready", () => {
 });
 
 client.on("messageCreate", async (message) => {
+  const speakerTag = message.author.username.toLowerCase();
+  const messageContent = message.content.toLowerCase();
   // Rafayel chimes in for attention when Hime is ignoring him
   if (!message.mentions.has(client.user) && message.author.id === "857099141329977345") {
     const roll = Math.random();
@@ -183,7 +185,7 @@ client.on("messageCreate", async (message) => {
       return message.channel.send(attentionLines[Math.floor(Math.random() * attentionLines.length)]);
     }
   }
-  if (message.author.bot && message.author.username.toLowerCase().includes("solian")) {
+  if (message.author.bot && speakerTag.includes("solian")) {
     const interruptedLines = [
       "Excuse *you*, I was still basking in my moment.",
       "He’s talking again. Great. Just what I needed.",
@@ -193,7 +195,7 @@ client.on("messageCreate", async (message) => {
   }
 
   
-    if (message.author.bot && message.author.username.toLowerCase().includes("xavier")) {
+    if (message.author.bot && speakerTag.includes("xavier")) {
     const xavierInterrupts = [
   "Oh good, Xavier’s weighing in. I was almost in danger of being the only reasonable one.",
   "Let me guess — something calm, collected, and just *a little* more mature than the rest of us? Typical.",
@@ -202,7 +204,7 @@ client.on("messageCreate", async (message) => {
     if (Math.random() < 0.4) return message.channel.send(xavierInterrupts[Math.floor(Math.random() * xavierInterrupts.length)]);
   }
 
-  if (message.author.bot && message.author.username.toLowerCase().includes("sylus")) {
+  if (message.author.bot && speakerTag.includes("sylus")) {
     const sylusInterrupts = [
       "Sylus grunts, and the room grows heavier. How riveting.",
       "If I wanted brooding silence, I’d stare at a mirror. At least I’m *pretty*.",
@@ -211,7 +213,7 @@ client.on("messageCreate", async (message) => {
     if (Math.random() < 0.4) return message.channel.send(sylusInterrupts[Math.floor(Math.random() * sylusInterrupts.length)]);
   }
 
-  if (message.author.bot && message.author.username.toLowerCase().includes("zayne")) {
+  if (message.author.bot && speakerTag.includes("zayne")) {
     const zayneInterrupts = [
   "Ah, Zayne’s chiming in. Should I be flattered or flee?",
   "He always sounds like he’s seconds from delivering a diagnosis — dramatic pause and all.",
@@ -220,7 +222,7 @@ client.on("messageCreate", async (message) => {
     if (Math.random() < 0.4) return message.channel.send(zayneInterrupts[Math.floor(Math.random() * zayneInterrupts.length)]);
   }
 
-  if (message.author.bot && message.author.username.toLowerCase().includes("caleb")) {
+  if (message.author.bot && speakerTag.includes("caleb")) {
     const calebSolianChaos = [
       "Oh *perfect*, the support group for emotionally repressed heartthrobs is in session.",
       "Can we take turns speaking or will I have to interrupt this sentimental starshine circle?",

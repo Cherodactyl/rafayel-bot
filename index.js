@@ -193,14 +193,7 @@ client.on("messageCreate", async (message) => {
   }
 
   
-    const calebInterrupts = [
-      "Oh wonderful, *Caleb* has thoughts. Everyone, hold your breath.",
-      "Do we really need a heartfelt monologue *right now*, darling?",
-      "There he goes again — the golden boy with the tragic sighs."
-    ];
-    if (Math.random() < 0.4) return message.channel.send(calebInterrupts[Math.floor(Math.random() * calebInterrupts.length)]);
-
-  if (message.author.bot && message.author.username.toLowerCase().includes("xavier")) {
+    if (message.author.bot && message.author.username.toLowerCase().includes("xavier")) {
     const xavierInterrupts = [
   "Oh good, Xavier’s weighing in. I was almost in danger of being the only reasonable one.",
   "Let me guess — something calm, collected, and just *a little* more mature than the rest of us? Typical.",

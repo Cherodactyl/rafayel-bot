@@ -175,7 +175,6 @@ client.on("messageCreate", async (message) => {
         "A little attention wouldn’t kill you. Or maybe it would? Try me."
       ];
       return message.channel.send(brattyLines[Math.floor(Math.random() * brattyLines.length)]);
-    } 
     } else if (roll < 0.07) {
       const jealousyLines = [
         "He’s still talking, and you’re still listening. I’m *devastated*.",
@@ -183,8 +182,7 @@ client.on("messageCreate", async (message) => {
         "Tell me, Cutie, does he get under your skin the way I do?"
       ];
       return message.channel.send(jealousyLines[Math.floor(Math.random() * jealousyLines.length)]);
-    }
-  } else if (roll < 0.05) {
+    } else if (roll < 0.05) {
       const attentionLines = [
         "Am I invisible now, Princess? That’s cruel, even for you...",
         "Just going to keep talking to everyone *else*? Hmph. Noted.",

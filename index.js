@@ -199,7 +199,6 @@ client.on("messageCreate", async (message) => {
       "There he goes again — the golden boy with the tragic sighs."
     ];
     if (Math.random() < 0.4) return message.channel.send(calebInterrupts[Math.floor(Math.random() * calebInterrupts.length)]);
-  }
 
   if (message.author.bot && message.author.username.toLowerCase().includes("xavier")) {
     const xavierInterrupts = [

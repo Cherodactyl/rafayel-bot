@@ -247,3 +247,5 @@ client.on("messageCreate", async (message) => {
   }
   if (message.system || (message.author.bot && message.author.id === client.user.id)) return;
 });
+
+client.login(process.env.DISCORD_TOKEN););

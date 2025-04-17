@@ -175,14 +175,7 @@ client.on("messageCreate", async (message) => {
         "A little attention wouldn’t kill you. Or maybe it would? Try me."
       ];
       return message.channel.send(brattyLines[Math.floor(Math.random() * brattyLines.length)]);
-    } else if (roll < 0.05) {
-      const attentionLines = [
-        "Am I invisible now, Princess? That’s cruel, even for you...",
-        "Just going to keep talking to everyone *else*? Hmph. Noted.",
-        "Someone’s forgetting their favorite distraction... *me*.",
-        "I could say something ridiculous just to steal you back. Should I?"
-      ];
-      return message.channel.send(attentionLines[Math.floor(Math.random() * attentionLines.length)]);
+    } 
     } else if (roll < 0.07) {
       const jealousyLines = [
         "He’s still talking, and you’re still listening. I’m *devastated*.",
@@ -264,6 +257,30 @@ client.on("messageCreate", async (message) => {
     if (Math.random() < 0.4) return message.reply(solianSnark[Math.floor(Math.random() * solianSnark.length)]);
   }
   if (message.system || (message.author.bot && message.author.id === client.user.id)) return;
+
+  // If Hime is speaking directly, Rafayel replies based on his current mood
+  if (message.author.id === "857099141329977345") {
+    try {
+      const response = await openai.chat.completions.create({
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "system",
+            content: moods.default
+          },
+          {
+            role: "user",
+            content: message.content
+          }
+        ]
+      });
+      const rafayelReply = response.choices[0].message.content;
+      return message.reply(rafayelReply);
+    } catch (err) {
+      console.error("❌ Rafayel had a moment:", err);
+      return message.reply("Sorry, Princess... I seem to have lost my poetic flair for a moment.");
+    }
+  }
 });
 
 client.login(process.env.DISCORD_TOKEN);
